@@ -1,36 +1,80 @@
 [
   {
-    "image": "https://example.com/product1.jpg",
-    "name": "Product 1",
-    "price": 19.99,
-    "containerStyle": {
-      "alignment": "center",
-      "padding": {"left": 16.0, "right": 16.0, "top": 8.0, "bottom": 8.0}
+    "type": "container",
+    "alignment": "center",
+    "padding": {
+      "left": 16,
+      "right": 16,
+      "top": 8,
+      "bottom": 8
     },
-    "textStyle": {
-      "fontSize": 20.0,
-      "fontWeight": "bold"
-    },
-    "priceStyle": {
-      "fontSize": 18.0,
-      "color": "#888888"
+    "child": {
+      "type": "column",
+      "crossAxisAlignment": "start",
+      "children": [
+        {
+          "type": "image",
+          "src": "https://example.com/product1.jpg",  // Make sure image URL is always a non-null string.
+          "height": 100.0,
+          "width": 100.0,
+          "fit": "contain"
+        },
+        {
+          "type": "text",
+          "style": {
+            "fontSize": 20.0,
+            "fontWeight": "bold"
+          },
+          "text": "Product 1"  // Ensure the name is always a valid string.
+        },
+        {
+          "type": "text",
+          "style": {
+            "fontSize": 18.0,
+            "color": "#888888"
+          },
+          "text": "\$19.99"  // Convert price to a string if it's a number.
+        }
+      ]
     }
   },
   {
-    "image": "https://example.com/product2.jpg",
-    "name": "Product 2",
-    "price": 29.99,
-    "containerStyle": {
-      "alignment": "start",
-      "padding": {"left": 8.0, "right": 8.0, "top": 16.0, "bottom": 16.0}
+    "type": "container",
+    "alignment": "start",
+    "padding": {
+      "left": 8,
+      "right": 8,
+      "top": 16,
+      "bottom": 16
     },
-    "textStyle": {
-      "fontSize": 18.0,
-      "fontWeight": "normal"
-    },
-    "priceStyle": {
-      "fontSize": 16.0,
-      "color": "#666666"
+    "child": {
+      "type": "column",
+      "crossAxisAlignment": "start",
+      "children": [
+        {
+          "type": "image",
+          "src": "https://example.com/product2.jpg",
+          "height": 100.0,
+          "width": 100.0,
+          "fit": "contain"
+        },
+        {
+          "type": "text",
+          "style": {
+            "fontSize": 18.0,
+            "fontWeight": "normal"
+          },
+          "text": "Product 2"
+        },
+        {
+          "type": "text",
+          "style": {
+            "fontSize": 16.0,
+            "color": "#666666"
+          },
+          "text": "\$29.99"
+        }
+      ]
     }
   }
 ]
