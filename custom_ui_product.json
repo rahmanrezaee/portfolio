@@ -14,7 +14,7 @@
       "children": [
         {
           "type": "image",
-          "src": "https://example.com/product1.jpg",  // Make sure image URL is always a non-null string.
+          "src": "https://example.com/product1.jpg",  
           "height": 100.0,
           "width": 100.0,
           "fit": "contain"
@@ -25,7 +25,7 @@
             "fontSize": 20.0,
             "fontWeight": "bold"
           },
-          "text": "Product 1"  // Ensure the name is always a valid string.
+          "text": "Product 1"  
         },
         {
           "type": "text",
@@ -33,7 +33,7 @@
             "fontSize": 18.0,
             "color": "#888888"
           },
-          "text": "\$19.99"  // Convert price to a string if it's a number.
+          "text": "\$19.99"  
         }
       ]
     }
