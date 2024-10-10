@@ -1,0 +1,80 @@
+[
+    {
+      "type": "container",
+      "alignment": "center",
+      "padding": {
+        "left": 16,
+        "right": 16,
+        "top": 8,
+        "bottom": 8
+      },
+      "child": {
+        "type": "column",
+        "crossAxisAlignment": "start",
+        "children": [
+          {
+            "type": "image",
+            "src": "https://example.com/product1.jpg",  
+            "height": 100.0,
+            "width": 100.0,
+            "fit": "contain"
+          },
+          {
+            "type": "text",
+            "style": {
+              "fontSize": 20.0,
+              "fontWeight": "bold"
+            },
+            "text": "Product 1"  
+          },
+          {
+            "type": "text",
+            "style": {
+              "fontSize": 18.0,
+              "color": "#888888"
+            },
+            "text": "$19.99"  
+          }
+        ]
+      }
+    },
+    {
+      "type": "container",
+      "alignment": "start",
+      "padding": {
+        "left": 8,
+        "right": 8,
+        "top": 16,
+        "bottom": 16
+      },
+      "child": {
+        "type": "column",
+        "crossAxisAlignment": "start",
+        "children": [
+          {
+            "type": "image",
+            "src": "https://example.com/product2.jpg",
+            "height": 100.0,
+            "width": 100.0,
+            "fit": "contain"
+          },
+          {
+            "type": "text",
+            "style": {
+              "fontSize": 18.0,
+              "fontWeight": "normal"
+            },
+            "text": "Product 2"
+          },
+          {
+            "type": "text",
+            "style": {
+              "fontSize": 16.0,
+              "color": "#666666"
+            },
+            "text": "$29.99"
+          }
+        ]
+      }
+    }
+  ]
