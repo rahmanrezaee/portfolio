@@ -16,6 +16,12 @@
       "type": "list_view",
       "args": {
         "children": [
+           {
+            "type": "text",
+            "args": {
+              "text": "Hello World"
+            }
+          },
           {
             "type": "text",
             "args": {
