@@ -17,19 +17,18 @@
             "mainAxisSize": "min",
             "children": [
               {
-            "type": "text",
-            "args": {
-              "text": "Network"
-            }
-          },
-             {
+                "type": "text",
+                "args": {
+                  "text": "Network"
+                }
+              },
+              {
                 "type": "network_image",
                 "args": {
                   "fit": "fitWidth",
                   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google.png/320px-Google.png"
                 }
-              },
-              
+              }
             ]
           }
         }
@@ -37,4 +36,3 @@
     }
   }
 }
-
