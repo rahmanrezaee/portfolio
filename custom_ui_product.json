@@ -5,11 +5,11 @@
     "child": {
       "type": "card",
       "args": {
-        "color": "#E91E63",
+        "color": "#CCCCCC",
         "elevation": 10,
         "shape": {
           "type": "rounded",
-          "borderRadius": 15
+          "borderRadius": 50
         },
         "child": {
           "type": "column",
