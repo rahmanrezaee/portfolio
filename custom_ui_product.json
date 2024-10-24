@@ -17,38 +17,16 @@
       "args": {
         "children": [
           {
-            "type": "padding",
+            "type": "text",
             "args": {
-              "padding": {
-                "left": 16,
-                "top": 8,
-                "right": 16,
-                "bottom": 8
-              },
-              "child": {
-                "type": "text",
-                "args": {
-                  "text": "Network"
-                }
-              }
+              "text": "Network"
             }
           },
           {
-            "type": "padding",
+            "type": "network_image",
             "args": {
-              "padding": {
-                "left": 16,
-                "top": 8,
-                "right": 16,
-                "bottom": 8
-              },
-              "child": {
-                "type": "network_image",
-                "args": {
-                  "fit": "fitWidth",
-                  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google.png/320px-Google.png"
-                }
-              }
+              "fit": "fitWidth",
+              "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google.png/320px-Google.png"
             }
           }
         ]
