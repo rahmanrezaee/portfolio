@@ -5,7 +5,7 @@
     "child": {
       "type": "card",
       "args": {
-        "color": "#CCCCCC",
+        "color": "#AAAA11",
         "elevation": 10,
         "shape": {
           "type": "rounded",
@@ -19,7 +19,7 @@
               {
                 "type": "text",
                 "args": {
-                  "text": "Network"
+                  "text": "Network Second time"
                 }
               },
               {
