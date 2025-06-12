@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Python egg info
+*.egg-info/
+dist/
+build/
+
+# Environment variable files
+.env
+.env.*
+
+# Flask cache and logs
+instance/
+*.log
+
+# Pytest and coverage reports
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# MyPy and other type-checking tools
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# VSCode settings
+.vscode/
+
+# macOS metadata
+.DS_Store
+
+# System files
+Thumbs.db
