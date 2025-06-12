@@ -478,6 +478,35 @@ footer {
     background: var(--bs-primary);
 }
 
+/* Sticky Content for Work Experience Section */
+.sticky-content {
+    position: relative;
+}
+
+.sticky-wrapper {
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+    background: var(--bs-body-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(var(--bs-light-rgb), 0.1);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.sticky-wrapper:hover {
+    box-shadow: var(--shadow-xl);
+}
+
+@media (max-width: 991px) {
+    .sticky-wrapper {
+        position: static;
+        top: auto;
+        padding: 1.5rem;
+    }
+}
+
 /* Print Styles */
 @media print {
     .navbar,
@@ -497,5 +526,10 @@ footer {
     .container {
         max-width: none;
         padding: 0;
+    }
+    
+    .sticky-wrapper {
+        position: static !important;
+        box-shadow: none !important;
     }
 }
