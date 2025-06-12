@@ -125,7 +125,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="hero-image text-center">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face" 
+                        <img src="{{ url_for('static', filename='images/rahman-photo.jpg') }}" 
                              alt="Rahman Rezaee" 
                              class="img-fluid rounded-circle shadow-lg"
                              style="width: 400px; height: 400px; object-fit: cover;">
@@ -141,36 +141,221 @@
             <div class="row mb-5">
                 <div class="col-12 text-center">
                     <h2 class="fw-bold mb-3">Technical Skills</h2>
-                    <p class="lead text-muted">Technologies I work with</p>
+                    <p class="lead text-muted">Technologies and tools I specialize in</p>
                 </div>
             </div>
+            
+            <!-- Mobile Development Skills -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="skill-icon-wrapper me-3">
+                                    <i class="fab fa-android fa-2x text-success"></i>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bold mb-1">Mobile Development</h3>
+                                    <p class="text-muted mb-0">Cross-platform and native mobile applications</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-3">
+                                <div class="skill-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-semibold">Flutter & Dart</span>
+                                        <span class="skill-level expert">Expert</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-3">
+                                <div class="skill-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-semibold">Android (Kotlin/Java)</span>
+                                        <span class="skill-level expert">Expert</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-3">
+                                <div class="skill-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-semibold">iOS (Swift/SwiftUI)</span>
+                                        <span class="skill-level advanced">Advanced</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Frontend Development Skills -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="skill-icon-wrapper me-3">
+                                    <i class="fab fa-js-square fa-2x text-warning"></i>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bold mb-1">Frontend Development</h3>
+                                    <p class="text-muted mb-0">Modern web interfaces and user experiences</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-3">
+                                <div class="skill-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-semibold">ReactJs & NextJs</span>
+                                        <span class="skill-level advanced">Advanced</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-3">
+                                <div class="skill-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-semibold">Angular</span>
+                                        <span class="skill-level advanced">Advanced</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-3">
+                                <div class="skill-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-semibold">HTML/CSS/JavaScript</span>
+                                        <span class="skill-level expert">Expert</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Backend & API Skills -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="skill-icon-wrapper me-3">
+                                    <i class="fas fa-server fa-2x text-info"></i>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bold mb-1">Backend & APIs</h3>
+                                    <p class="text-muted mb-0">Server-side development and API integration</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-3">
+                                <div class="skill-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-semibold">Node.js & Express</span>
+                                        <span class="skill-level advanced">Advanced</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-3">
+                                <div class="skill-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-semibold">Firebase & RESTful APIs</span>
+                                        <span class="skill-level expert">Expert</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-3">
+                                <div class="skill-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-semibold">Laravel & PHP</span>
+                                        <span class="skill-level intermediate">Intermediate</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tools & Technologies -->
             <div class="row">
-                <div class="col-md-3 mb-4">
-                    <div class="skill-card text-center p-4 h-100">
-                        <i class="fab fa-android fa-3x text-success mb-3"></i>
-                        <h5 class="fw-semibold">Mobile Development</h5>
-                        <p class="text-muted small">Flutter, Android, iOS, Dart, Kotlin, Swift</p>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="skill-card text-center p-4 h-100">
-                        <i class="fab fa-js-square fa-3x text-warning mb-3"></i>
-                        <h5 class="fw-semibold">Frontend</h5>
-                        <p class="text-muted small">ReactJs, NextJs, Angular, Bootstrap, HTML, CSS</p>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="skill-card text-center p-4 h-100">
-                        <i class="fas fa-server fa-3x text-info mb-3"></i>
-                        <h5 class="fw-semibold">Backend & API</h5>
-                        <p class="text-muted small">Node.js, Firebase, Laravel, RESTful APIs</p>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="skill-card text-center p-4 h-100">
-                        <i class="fas fa-tools fa-3x text-primary mb-3"></i>
-                        <h5 class="fw-semibold">Tools & Others</h5>
-                        <p class="text-muted small">Git, WebRTC, Socket.io, Payment APIs</p>
+                <div class="col-12">
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="skill-icon-wrapper me-3">
+                                    <i class="fas fa-tools fa-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bold mb-1">Tools & Technologies</h3>
+                                    <p class="text-muted mb-0">Development tools and specialized technologies</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tools-grid">
+                            <div class="tool-item">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git & Version Control</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-video"></i>
+                                <span>WebRTC & Kurento</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-plug"></i>
+                                <span>Socket.io</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Payment APIs</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fab fa-aws"></i>
+                                <span>AWS Services</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-map"></i>
+                                <span>Google Maps API</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-bell"></i>
+                                <span>FCM Notifications</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-database"></i>
+                                <span>Database Management</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

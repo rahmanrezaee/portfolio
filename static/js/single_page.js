@@ -234,29 +234,51 @@ function initializeContactForm() {
 
 // Skill animations
 function initializeSkillAnimations() {
-    const skillCards = document.querySelectorAll('.skill-card');
+    const skillCategories = document.querySelectorAll('.skill-category-card');
     
     const observerOptions = {
-        threshold: 0.3,
+        threshold: 0.2,
         rootMargin: '0px 0px -50px 0px'
     };
     
     const observer = new IntersectionObserver(function(entries) {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, index * 100);
+                // Animate skill bars in this category
+                const skillBars = entry.target.querySelectorAll('.skill-progress');
+                skillBars.forEach((bar, index) => {
+                    setTimeout(() => {
+                        // Get the intended width from style attribute
+                        const targetWidth = bar.style.width || '0%';
+                        bar.style.width = '0%';
+                        // Trigger animation
+                        setTimeout(() => {
+                            bar.style.width = targetWidth;
+                        }, 100);
+                    }, index * 150);
+                });
+                
+                // Animate tool items
+                const toolItems = entry.target.querySelectorAll('.tool-item');
+                toolItems.forEach((item, index) => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    item.style.transition = 'all 0.5s ease';
+                    
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, index * 100 + 300);
+                });
+                
+                // Don't observe this element again
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
     
-    skillCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+    skillCategories.forEach(category => {
+        observer.observe(category);
     });
 }
 
