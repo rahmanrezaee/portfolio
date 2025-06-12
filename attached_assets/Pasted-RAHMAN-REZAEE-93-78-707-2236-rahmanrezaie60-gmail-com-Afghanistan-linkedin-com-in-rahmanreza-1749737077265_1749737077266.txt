@@ -1,0 +1,76 @@
+RAHMAN REZAEE
++93 78 707 2236 | rahmanrezaie60@gmail.com | Afghanistan | linkedin.com/in/rahmanrezaee
+PROFESSIONAL SUMMARY
+lately, I'm enjoying my life with Android and Flutter as my full-day job with friends and hobbies, As an experienced software developer
+with strong front-end design and development skills, I work on the Back-end of products for enterprise use and for more than several
+years as a Software Developer. I am focused on learning new technologies and creating high-quality solutions and I take pride in
+producing robust code, with clean and well-documented documentation. I love sports, watching movies , traveling, and exploring new
+places.
+EDUCATION
+Herat University January 2016 - August 2021
+Bachelor's, Software Engineering GPA: 3.5
+CERTIFICATIONS
+Flutter Development Course Udemy | May 2020
+Freecodecomp Web Design | Aug 2019
+Android Development Course at Herat University | Jun 2017
+PROFESSIONAL EXPERIENCE
+HeyFlutter Germany
+Senior Software Engineer February 2023 - Present
+• HeyFlutter (Dart, Flutter, Typescript, Firebase, Google Cloud): Co-developed and maintained a Flutter and Firebase-based
+website, ensuring smooth performance and user satisfaction.
+• Remote work based in Germany from March 2023 to present.
+• Enjoy-TV Movies App (Dart, Flutter, Firebase, Google Cloud): Enhanced cross-platform app development for Android, iOS,
+and TV platforms.
+• Mastered Flutter framework for seamless deployment across multiple devices.
+• Strengthened skills in integrating and managing multiple streaming accounts within a single application interface.
+• Ryvo - Photo Contests (Dart and Flutter): Crafted captivating social media platforms for creatives with gamification elements.
+• Mastered brand connections integration, allowing wider exposure for photographers and influencers.
+• Chemtron - E-Commerce App (Dart, Flutter, Firebase, Google Cloud): Developed comprehensive e-commerce platforms for
+B2B transactions.
+• Enhanced user experience through intuitive shopping cart management and streamlined checkout processes.
+• Strydd (Dart, Flutter, Firebase, Video Editing, AI): Developed a training app utilizing AI for workout analysis, video sharing,
+and community engagement.
+Webfume California, USA
+Senior Mobile Developer September 2020 - February 2022
+• Project List:
+• Dist ba Dist (Dart, Flutter, Kotlin, Java, Swift, SwiftUi, Nodejs, Express): Large project encompassing various sections like
+Chat, Live, Post, Reaction, Profile, Connections, and Donate.
+• Integrates authorize.net payment and Webrtc/Kurento for live setups.
+• Features a custom-built video and voice player.
+• Focuses on notifications in foreground and background for both Android and iOS.
+• Non-profit project aiding Afghan people with various functionalities like donations, news channels, etc.
+• Restaurant Applications (Dart, Flutter, Nodejs, Express): Consists of three applications facilitating online food selling and
+order management.
+• Admin app manages customers, orders, food, feedback, and income.
+• The restaurant app manages order pickups and deliveries.
+• Driver App and Passenger App (Kotlin, Java, XML, Android): Focuses on customizing Firebase Cloud Messaging (FCM) and
+implementing Google Maps with custom features.
+• Aimed at live tracking on Google Maps.
+• Stacks include Android and Kotlin.
+• ShiftNext (TypeScript, Angular, Nodejs, Express, Socket.io, Aws S3, Aws SNS): Angular-based project with features like
+sign-in/signup using Cognito AWS.
+• Three types of views: Timeline, Grid, and Staff.
+• Utilizes Socket.io for real-time data and RESTful APIs for data exchange.
+• Implements Single Sign-On (SSO) and backend using Node.js/Express.
+• Involves file uploading on S3 and location picking with Google Maps.
+Tutia Tech Herat, Afghanistan
+Software Developer October 2017 - August 2020
+• Project List:
+• Next Level Skin (Flutter, Dart, Shopify API): A project involving Shopify and WooCommerce integration.
+• Tasks include creating a customer theme and enabling Storefront API for a mobile application.
+• Features include a Product List, Review Product, Branding, Advertising, and daily changes on the skin.
+• Herat Exchanger (Flutter, Dart, WordPress, Flutter, PHP): Developed for the Herat Money Changers Union to display real-time
+rate changes.
+• Includes features like a blog, information section, and rate change tools.
+• Utilizes WordPress for the website and custom field plugin for API.
+• Published on both Google Play Store and App Store.
+• Badam Real Estate (Flutter, Android/Kotlin, Socket.io, WordPress Api): First product built for own company facilitating
+property transactions in Afghanistan.
+• Allows buying, selling, and renting properties in major cities.
+• Features include search by location, property type, area, and price range.
+• Involves website development and backend REST API creation.
+• Published on Google Play Store.
+SKILLS
+Skills: Dart, Flutter, Firebase, Android Development, iOS/Swift, Kotlin, Java, MySQL, NoSQL, Socket.io, JIRA, HTML/CSS, Git,
+Agile
+Languages: Dari, Farsi, Pashto
