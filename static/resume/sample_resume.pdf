@@ -1,127 +1,69 @@
-%PDF-1.4
-1 0 obj
-<<
-/Type /Catalog
-/Pages 2 0 R
->>
-endobj
+Rahman Rezaee
+Mobile Engineer & Developer
 
-2 0 obj
-<<
-/Type /Pages
-/Kids [3 0 R]
-/Count 1
->>
-endobj
+Email: rahmanrezaie60@gmail.com
+GitHub: rahmanrezaee
+LinkedIn: RahmanRezaee
+Phone & WhatsApp: +93(0)785185336
 
-3 0 obj
-<<
-/Type /Page
-/Parent 2 0 R
-/MediaBox [0 0 612 792]
-/Resources <<
-/Font <<
-/F1 4 0 R
->>
->>
-/Contents 5 0 R
->>
-endobj
 
-4 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/BaseFont /Helvetica
->>
-endobj
+PROFESSIONAL SUMMARY
+Self-Started Mobile Engineer and Mobile Developer having 5+ years of experience in
+developing small-scale to middle and enterprise-scale projects. Demonstrated ability to
+improve performance by leveraging advanced and emerging technologies. Established
+capacity for streaming development by integrating third-party libraries.
 
-5 0 obj
-<<
-/Length 800
->>
-stream
-BT
-/F1 24 Tf
-100 700 Td
-(Professional Resume) Tj
-0 -50 Td
-/F1 16 Tf
-(Your Name) Tj
-0 -30 Td
-/F1 12 Tf
-(Full-Stack Developer) Tj
-0 -20 Td
-(Email: contact@example.com) Tj
-0 -20 Td
-(Phone: +1 (555) 123-4567) Tj
-0 -20 Td
-(Location: New York, NY) Tj
-0 -40 Td
-/F1 14 Tf
-(PROFESSIONAL SUMMARY) Tj
-0 -20 Td
-/F1 12 Tf
-(Experienced full-stack developer with 5+ years of expertise) Tj
-0 -15 Td
-(in creating scalable web applications using modern technologies.) Tj
-0 -40 Td
-/F1 14 Tf
-(TECHNICAL SKILLS) Tj
-0 -20 Td
-/F1 12 Tf
-(• Frontend: JavaScript, React, Vue.js, HTML5, CSS3) Tj
-0 -15 Td
-(• Backend: Python, Flask, Django, Node.js, Express) Tj
-0 -15 Td
-(• Database: PostgreSQL, MongoDB, MySQL, Redis) Tj
-0 -15 Td
-(• Tools: Docker, Git, AWS, Linux, CI/CD) Tj
-0 -40 Td
-/F1 14 Tf
-(EXPERIENCE) Tj
-0 -20 Td
-/F1 12 Tf
-(Senior Full-Stack Developer | Tech Innovations Inc.) Tj
-0 -15 Td
-(2022 - Present) Tj
-0 -15 Td
-(• Lead development of scalable web applications) Tj
-0 -15 Td
-(• Mentor junior developers and conduct code reviews) Tj
-0 -30 Td
-(Full-Stack Developer | Digital Solutions Ltd.) Tj
-0 -15 Td
-(2020 - 2022) Tj
-0 -15 Td
-(• Developed multiple client web applications) Tj
-0 -15 Td
-(• Integrated third-party APIs and payment systems) Tj
-0 -40 Td
-/F1 14 Tf
-(EDUCATION) Tj
-0 -20 Td
-/F1 12 Tf
-(Bachelor of Science in Computer Science) Tj
-0 -15 Td
-(University of Technology | 2015 - 2019) Tj
-ET
-endstream
-endobj
 
-xref
-0 6
-0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000268 00000 n 
-0000000345 00000 n 
-trailer
-<<
-/Size 6
-/Root 1 0 R
->>
-startxref
-1197
-%%EOF
+TECHNICAL SKILLS
+¢ Mobile Development: Dart, Java, Kotlin, Swift, Android (XML, Jetpack Compose), Flutter, iOS (SwiftUI)
+¢ Frontend: ReactJs, NextJs, Angular, Bootstrap, HTML, CSS, Javascript
+¢ Backend & APIs: Node.js, Firebase, Laravel, RESTful APIs, Socket.io, WebRTC
+¢ Tools & Technologies: Git, WebRTC, Kurento, Payment APIs (Stripe, Authorize.net), Google Maps
+¢ Soft Skills: Team Player, Leadership, Deliver Results, Problem Solving, Code Review
+
+
+WORK EXPERIENCE
+Senior Mobile Developer | Webfume LLC | Nov 2020 – Feb 2023 | Remote
+¢ Designed mobile applications using Flutter, Android (Java/Kotlin), and iOS (SwiftUI)
+¢ Built RESTful APIs using Node.js and Firebase
+¢ Implemented authentication with Firebase, Google, Facebook, Apple, and phone verification
+¢ Used WebRTC for live streaming and Socket.io for real-time chat applications
+¢ Published applications on Google Play Store and App Store
+¢ Conducted daily scrum meetings and code reviews
+
+Mobile Developer | Tutia Company | Oct 2018 – Nov 2020 | OnSite
+¢ Developed mobile applications using Flutter and native Android (Java/Kotlin)
+¢ Integrated applications with Firebase and Laravel/WordPress APIs
+¢ Implemented state management with Provider, Bloc, MobX, and GetX
+¢ Used Retrofit, Volley, and OkHttp for API requests
+
+Freelance Mobile Developer | Independent | Oct 2017 – Oct 2018 | Contract
+¢ Built PHP accounting system using Laravel framework
+¢ Developed frontend using HTML, CSS, JavaScript, and jQuery
+¢ Worked with MySQL database for data management
+
+
+EDUCATION & CERTIFICATIONS
+Bachelor Degree in Computer Science | Herat University | Jan 2016 - Apr 2021
+High School Graduate | Zokor Jabreal High School | Nov 2011 - Aug 2015
+English Institute Graduate | Kouther English Institute | Mar 2019 - Jun 2020
+
+Certifications:
+¢ Web Design Certification - FreeCodeCamp (2019)
+¢ Android Development Course - 3 Month Training (2017)
+¢ Flutter Development Course - Udemy by Maximilian (2020)
+
+
+LANGUAGES
+English: Advanced
+Persian: Native
+Deutsch: Basic
+
+
+NOTABLE PROJECTS
+¢ Dist ba Dist - Social platform with live streaming and real-time features
+¢ Restaurant Food Delivery App - Complete delivery system with three applications
+¢ ShiftNext - Angular project with AWS Cognito and real-time features
+¢ Herat Exchanger - Currency exchange app published on both stores
+¢ Badam Real Estate - Property listing app for Afghanistan market
+
