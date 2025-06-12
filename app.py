@@ -42,6 +42,9 @@ mail.init_app(app)
 with app.app_context():
     # Make sure to import the models here or their tables won't be created
     import models  # noqa: F401
+    
+    # Drop all tables and recreate to handle schema changes
+    db.drop_all()
     db.create_all()
 
 # Import routes

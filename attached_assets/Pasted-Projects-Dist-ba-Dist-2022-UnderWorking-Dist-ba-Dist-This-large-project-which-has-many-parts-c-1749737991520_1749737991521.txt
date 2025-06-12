@@ -1,0 +1,64 @@
+Projects
+Dist ba Dist | 2022 - UnderWorking
+Dist ba Dist This large project which has many parts chat Section, Live Section, Post Section, Rection Sections,
+Profile Sections, Connections Section, Donate Section.
+work with authorize.net payment and with Webrtc and kurento for setup live also make build customer video
+player and voice player, also worked on notifications foreground and background on both android and ios . in
+this project have good design which wheel and complex shape for draw. That is none profit project which
+helps Afghan people help each other, donate or news channel from last news and many other options.
+Stacks: Flutter, Kotlin, Swift, WebRTCVideo
+Resturant Applications (Dulces Antojitos Food Delievery) | 2021 | Deploy
+Have three applications that help to sell online foods and manage orders, admin check all customers, orders,
+foods, feedback, and income. admin applications parts: customer management, Order management, Content
+management, report Management, Foods management, Restaurant Management applications are responsible
+for picking up these orders from the restaurant and delivering them to the customer's location. Drivers must
+be able to navigate through busy city streets while keeping an eye on the road, all while ensuring that they
+arrive at each destination in one piece.
+Stacks: RESTful APIs, Android, Flutter, WebRTCVideo, Android/Kotlin
+Driver App and Passenger App | 2020 | Uncomplete
+these apps I got how to customize the FCM, and set up Google Map with custom markers, circles, and live
+tracking on Google Map.
+Stacks: Android, kotlin
+ShiftNext | 2022 | Deliver
+It was a large project used by angular features signin and signup with Cognito aws three type of view
+TimeLine View and Grid View and Staff View Used Socket.io for real time data and restful Apis for
+sending/receiving data implement SSO login and signup backend used Nodejs/express Uploading File on S3 and
+used google map for pick location use javascript angular, angularjs, angular2+ for fronted
+Stacks: AngularJS Express.js Socket.io Node.js AWS Angular REST APIs Testing REST/RESTful APIs JavaScript
+Angular 2+
+Next Level Skin | 2022 | Underworking
+Shopify Project WooCommerce project, Make customer theme enable storefront api for mobile application
+which has Product List, Review Product, Branding and Advertising, and also have daliy changes on skin
+Stacks: Shopify Frontend store Api, Flutter
+Herat Exchanger | 2020 | publish
+Herat Money Changers Union made for Real Rate Changes In Herat City. It Can be Momently and Daily base
+also had some other feature (blog, Info, Rate Changers Tools)
+also have a website where u can see the news of this union also for this application create a WordPress API
+with a custom field plugin. published on play store and AppStore
+Stacks: WordPress, Flutter, PHP
+Badam Real Estate | 2019 | Deliver
+this application which be my first product which build for own company and its lets you buy, sell and rent
+properties in Afghanistan; allowing you to find houses, flats, apartments, and plots in Kabul, Herat, Mazar,
+and other major cities. search for verified listings by location, type of property, area, and price range,
+also had a website and API which my team setup and I worked also side of backend developer as build rest API
+for applications. published on google appstore
+Stacks: Flutter Android/Kotlin Socket.io
+Open Source Projects & Contribution
+AutoComplete Library | 2022 | Publish
+Its was an open source project for helping developer make async autocomplete and make sample way to
+implement complex auto complete with scrolling, listing, fatching data in flutter application in all kind of
+device.
+Stacks: Flutter, Dart
+Dictionary For Desktop Library | 2022 | Publish
+Its was an open source project for Windows user, becuase of lack of application in afghanistan community in
+desktop application i decited to build that. Its have support 3 language (dari, pashto, english), favorite, and
+change theme, and log of history of search.
+Stacks: Flutter, Dart
+Build Clean Architure for Android with Jetpack Compose | 2021 | Upload
+Its was an open source project for New developer which get quickly setup their env and understand how the
+MVVM pattern setup with jetpack compose.
+Stacks: Android, Kotlin, Jetpack Compose
+Kurento One to Many Call Example for Nodejs | 2021 | Upload
+Its was an open source project for New developer which get quickly setup their env and understand how the
+Kurento One to many works and how save the live stream in media server of webrtc
+Stacks: Nodejs

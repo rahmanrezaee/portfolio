@@ -14,13 +14,15 @@ class Contact(db.Model):
 
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
+    title = db.Column(db.String(200), nullable=False)
     description = db.Column(db.Text, nullable=False)
     image_url = db.Column(db.String(500))
     project_url = db.Column(db.String(500))
     github_url = db.Column(db.String(500))
     category = db.Column(db.String(50), nullable=False)
-    technologies = db.Column(db.String(200))
+    technologies = db.Column(db.Text)
+    status = db.Column(db.String(50))
+    year = db.Column(db.String(10))
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     featured = db.Column(db.Boolean, default=False)
     

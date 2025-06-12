@@ -49,7 +49,7 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                        <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -270,72 +270,102 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio-section py-5">
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section py-5">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
-                    <h2 class="fw-bold mb-3">My Portfolio</h2>
-                    <p class="lead text-muted">A showcase of my recent projects and technical expertise</p>
+                    <h2 class="fw-bold mb-3">My Projects</h2>
+                    <p class="lead text-muted">A comprehensive showcase of my development work and contributions</p>
                     
                     <!-- Filter Buttons -->
                     <div class="filter-buttons mb-5">
                         <button class="btn btn-primary me-2 mb-2" data-filter="all">All Projects</button>
                         {% for category in categories %}
-                        <button class="btn btn-outline-primary me-2 mb-2" data-filter="{{ category }}">{{ category.title() }}</button>
+                        <button class="btn btn-outline-primary me-2 mb-2" data-filter="{{ category }}">{{ category.title().replace('Opensource', 'Open Source') }}</button>
                         {% endfor %}
                     </div>
                 </div>
             </div>
             
-            <!-- Projects Grid -->
+            <!-- Projects List -->
             <div class="row" id="projects-container">
                 {% for project in all_projects %}
-                <div class="col-lg-4 col-md-6 mb-5 project-item" data-category="{{ project.category }}">
-                    <div class="project-card h-100">
-                        <div class="project-image">
-                            <img src="{{ project.image_url }}" alt="{{ project.title }}" class="img-fluid">
-                            <div class="project-overlay">
-                                <div class="overlay-content">
-                                    <h5 class="fw-bold text-white mb-2">{{ project.title }}</h5>
-                                    <p class="text-white-50 small mb-3">{{ project.description[:80] }}...</p>
-                                    <div class="project-links">
-                                        {% if project.project_url != '#' %}
-                                        <a href="{{ project.project_url }}" class="btn btn-primary btn-sm me-2" target="_blank">
-                                            <i class="fas fa-external-link-alt me-1"></i>Live Demo
-                                        </a>
-                                        {% endif %}
+                <div class="col-12 mb-4 project-item" data-category="{{ project.category }}">
+                    <div class="project-card-new h-100">
+                        <div class="project-content p-4">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="project-header mb-3">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h4 class="fw-bold mb-0">{{ project.title }}</h4>
+                                            <div class="project-badges">
+                                                {% if project.featured %}
+                                                <span class="badge bg-warning me-2">
+                                                    <i class="fas fa-star me-1"></i>Featured
+                                                </span>
+                                                {% endif %}
+                                                <span class="badge bg-primary">{{ project.category.title().replace('Opensource', 'Open Source') }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="project-meta mb-3">
+                                            <span class="text-muted me-3">
+                                                <i class="fas fa-calendar me-1"></i>{{ project.year }}
+                                            </span>
+                                            {% if project.status %}
+                                            <span class="badge 
+                                                {% if project.status == 'Published' or project.status == 'Deployed' or project.status == 'Delivered' %}bg-success
+                                                {% elif project.status == 'Under Working' %}bg-warning
+                                                {% elif project.status == 'Incomplete' %}bg-secondary
+                                                {% else %}bg-info{% endif %}">
+                                                {{ project.status }}
+                                            </span>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-muted mb-3">{{ project.description }}</p>
+                                    
+                                    {% if project.technologies %}
+                                    <div class="project-tech mb-3">
+                                        <h6 class="fw-semibold small text-muted mb-2">Technologies & Stack:</h6>
+                                        <div class="tech-tags">
+                                            {% for tech in project.technologies.split(', ') %}
+                                            <span class="badge bg-secondary me-1 mb-1">{{ tech.strip() }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="col-lg-4">
+                                    <div class="project-actions h-100 d-flex flex-column justify-content-center">
                                         {% if project.github_url != '#' %}
-                                        <a href="{{ project.github_url }}" class="btn btn-outline-light btn-sm" target="_blank">
-                                            <i class="fab fa-github me-1"></i>Code
+                                        <a href="{{ project.github_url }}" class="btn btn-outline-primary mb-2" target="_blank">
+                                            <i class="fab fa-github me-2"></i>View on GitHub
                                         </a>
                                         {% endif %}
+                                        {% if project.project_url != '#' %}
+                                        <a href="{{ project.project_url }}" class="btn btn-primary mb-2" target="_blank">
+                                            <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                                        </a>
+                                        {% endif %}
+                                        
+                                        <!-- Project Icon based on category -->
+                                        <div class="project-icon mt-3 text-center">
+                                            {% if project.category == 'mobile' %}
+                                            <i class="fas fa-mobile-alt fa-3x text-primary opacity-25"></i>
+                                            {% elif project.category == 'web' %}
+                                            <i class="fas fa-globe fa-3x text-info opacity-25"></i>
+                                            {% elif project.category == 'opensource' %}
+                                            <i class="fas fa-code-branch fa-3x text-success opacity-25"></i>
+                                            {% else %}
+                                            <i class="fas fa-laptop-code fa-3x text-secondary opacity-25"></i>
+                                            {% endif %}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="project-content p-4">
-                            <div class="d-flex justify-content-between align-items-start mb-2">
-                                <span class="badge bg-primary">{{ project.category.title() }}</span>
-                                {% if project.featured %}
-                                <span class="badge bg-warning">
-                                    <i class="fas fa-star me-1"></i>Featured
-                                </span>
-                                {% endif %}
-                            </div>
-                            <h5 class="fw-semibold mb-2">{{ project.title }}</h5>
-                            <p class="text-muted mb-3">{{ project.description }}</p>
-                            
-                            {% if project.technologies %}
-                            <div class="project-tech mb-3">
-                                <h6 class="fw-semibold small text-muted mb-2">Technologies Used:</h6>
-                                <div class="tech-tags">
-                                    {% for tech in project.technologies.split(', ') %}
-                                    <span class="badge bg-secondary me-1 mb-1">{{ tech.strip() }}</span>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                            {% endif %}
                         </div>
                     </div>
                 </div>
