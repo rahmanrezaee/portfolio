@@ -47,5 +47,9 @@ with app.app_context():
 # Import routes
 import routes  # noqa: F401
 
+# Initialize sample data after app is set up
+with app.app_context():
+    routes.create_sample_projects()
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

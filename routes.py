@@ -99,7 +99,6 @@ def resume():
     return redirect('/static/resume/sample_resume.pdf')
 
 # Initialize some sample projects if none exist
-@app.before_first_request
 def create_sample_projects():
     """Create sample projects if database is empty"""
     if Project.query.count() == 0:
