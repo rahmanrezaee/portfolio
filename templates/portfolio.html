@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio - Professional Portfolio{% endblock %}
+
+{% block content %}
+<!-- Portfolio Header -->
+<section class="portfolio-header py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-5 fw-bold mb-3">My Portfolio</h1>
+                <p class="lead text-muted mb-5">A showcase of my recent projects and technical expertise</p>
+                
+                <!-- Filter Buttons -->
+                <div class="filter-buttons mb-5">
+                    <a href="{{ url_for('portfolio') }}" 
+                       class="btn {% if current_category == 'all' %}btn-primary{% else %}btn-outline-primary{% endif %} me-2 mb-2">
+                        All Projects
+                    </a>
+                    {% for category in categories %}
+                    <a href="{{ url_for('portfolio', category=category) }}" 
+                       class="btn {% if current_category == category %}btn-primary{% else %}btn-outline-primary{% endif %} me-2 mb-2">
+                        {{ category.title() }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="projects-grid pb-5">
+    <div class="container">
+        {% if projects %}
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="project-card h-100">
+                    <div class="project-image">
+                        <img src="{{ project.image_url }}" alt="{{ project.title }}" class="img-fluid">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h5 class="fw-bold text-white mb-2">{{ project.title }}</h5>
+                                <p class="text-white-50 small mb-3">{{ project.description[:80] }}...</p>
+                                <div class="project-links">
+                                    {% if project.project_url != '#' %}
+                                    <a href="{{ project.project_url }}" class="btn btn-primary btn-sm me-2" target="_blank">
+                                        <i class="fas fa-external-link-alt me-1"></i>Live Demo
+                                    </a>
+                                    {% endif %}
+                                    {% if project.github_url != '#' %}
+                                    <a href="{{ project.github_url }}" class="btn btn-outline-light btn-sm" target="_blank">
+                                        <i class="fab fa-github me-1"></i>Code
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <span class="badge bg-primary">{{ project.category.title() }}</span>
+                            {% if project.featured %}
+                            <span class="badge bg-warning">
+                                <i class="fas fa-star me-1"></i>Featured
+                            </span>
+                            {% endif %}
+                        </div>
+                        <h5 class="fw-semibold mb-2">{{ project.title }}</h5>
+                        <p class="text-muted mb-3">{{ project.description }}</p>
+                        
+                        {% if project.technologies %}
+                        <div class="project-tech mb-3">
+                            <h6 class="fw-semibold small text-muted mb-2">Technologies Used:</h6>
+                            <div class="tech-tags">
+                                {% for tech in project.technologies.split(', ') %}
+                                <span class="badge bg-secondary me-1 mb-1">{{ tech.strip() }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="project-actions">
+                            {% if project.project_url != '#' %}
+                            <a href="{{ project.project_url }}" class="btn btn-outline-primary btn-sm me-2" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i>View Project
+                            </a>
+                            {% endif %}
+                            {% if project.github_url != '#' %}
+                            <a href="{{ project.github_url }}" class="btn btn-outline-secondary btn-sm" target="_blank">
+                                <i class="fab fa-github me-1"></i>Source Code
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="row">
+            <div class="col-12 text-center py-5">
+                <div class="empty-state">
+                    <i class="fas fa-folder-open fa-5x text-muted mb-4"></i>
+                    <h3 class="fw-bold text-muted mb-3">No Projects Found</h3>
+                    <p class="text-muted">
+                        {% if current_category != 'all' %}
+                        No projects found in the "{{ current_category.title() }}" category.
+                        <br><a href="{{ url_for('portfolio') }}" class="text-primary">View all projects</a>
+                        {% else %}
+                        Projects will be displayed here once they are added.
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="portfolio-cta py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="fw-bold mb-3">Interested in Working Together?</h2>
+                <p class="lead text-muted mb-4">
+                    I'm always excited to take on new challenges and collaborate on innovative projects.
+                </p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-paper-plane me-2"></i>Start a Conversation
+                    </a>
+                    <a href="{{ url_for('resume') }}" class="btn btn-outline-secondary btn-lg" target="_blank">
+                        <i class="fas fa-download me-2"></i>Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// Add smooth animations for project cards
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    projectCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Professional Portfolio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="display-4 fw-bold mb-4">
+                        Hi, I'm <span class="text-primary">Your Name</span>
+                    </h1>
+                    <p class="lead mb-4">
+                        A passionate full-stack developer specializing in creating modern, scalable web applications 
+                        with cutting-edge technologies.
+                    </p>
+                    <div class="hero-buttons mb-5">
+                        <a href="{{ url_for('portfolio') }}" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-briefcase me-2"></i>View My Work
+                        </a>
+                        <a href="{{ url_for('contact') }}" class="btn btn-outline-secondary btn-lg">
+                            <i class="fas fa-envelope me-2"></i>Get In Touch
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3 class="fw-bold text-primary mb-1">5+</h3>
+                                    <small class="text-muted">Years Experience</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3 class="fw-bold text-primary mb-1">50+</h3>
+                                    <small class="text-muted">Projects Completed</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3 class="fw-bold text-primary mb-1">25+</h3>
+                                    <small class="text-muted">Happy Clients</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image text-center">
+                    <img src="https://pixabay.com/get/g642378816762705012ea02d8fb8219b39efd9f33d88c32a78636237a586090137de720e82f4df3df04150ab0539f312f8a09b2b6532afd1402244f08faec95ad_1280.jpg" 
+                         alt="Professional workspace" 
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills-section py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold mb-3">Technical Skills</h2>
+                <p class="lead text-muted">Technologies I work with</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="skill-card text-center p-4 h-100">
+                    <i class="fab fa-python fa-3x text-primary mb-3"></i>
+                    <h5 class="fw-semibold">Backend</h5>
+                    <p class="text-muted small">Python, Flask, Django, Node.js, Express.js</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="skill-card text-center p-4 h-100">
+                    <i class="fab fa-js-square fa-3x text-warning mb-3"></i>
+                    <h5 class="fw-semibold">Frontend</h5>
+                    <p class="text-muted small">JavaScript, React, Vue.js, HTML5, CSS3</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="skill-card text-center p-4 h-100">
+                    <i class="fas fa-database fa-3x text-info mb-3"></i>
+                    <h5 class="fw-semibold">Database</h5>
+                    <p class="text-muted small">PostgreSQL, MongoDB, MySQL, Redis</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="skill-card text-center p-4 h-100">
+                    <i class="fab fa-aws fa-3x text-success mb-3"></i>
+                    <h5 class="fw-semibold">Cloud & Tools</h5>
+                    <p class="text-muted small">AWS, Docker, Git, Linux, CI/CD</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Section -->
+{% if featured_projects %}
+<section class="featured-projects py-5 bg-dark">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold mb-3">Featured Projects</h2>
+                <p class="lead text-muted">Some of my recent work</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for project in featured_projects %}
+            <div class="col-lg-4 mb-4">
+                <div class="project-card h-100">
+                    <div class="project-image">
+                        <img src="{{ project.image_url }}" alt="{{ project.title }}" class="img-fluid">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <a href="{{ project.project_url }}" class="btn btn-primary btn-sm me-2" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="{{ project.github_url }}" class="btn btn-outline-light btn-sm" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content p-4">
+                        <span class="badge bg-primary mb-2">{{ project.category.title() }}</span>
+                        <h5 class="fw-semibold mb-2">{{ project.title }}</h5>
+                        <p class="text-muted small mb-3">{{ project.description[:100] }}...</p>
+                        <div class="project-tech">
+                            <small class="text-muted">{{ project.technologies }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('portfolio') }}" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-right me-2"></i>View All Projects
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Call to Action Section -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="fw-bold mb-3">Ready to Start Your Project?</h2>
+                <p class="lead text-muted mb-4">
+                    Let's work together to bring your ideas to life with modern web technologies.
+                </p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-paper-plane me-2"></i>Start a Project
+                    </a>
+                    <a href="{{ url_for('resume') }}" class="btn btn-outline-secondary btn-lg" target="_blank">
+                        <i class="fas fa-download me-2"></i>Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

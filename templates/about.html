@@ -1,0 +1,267 @@
+{% extends "base.html" %}
+
+{% block title %}About - Professional Portfolio{% endblock %}
+
+{% block content %}
+<!-- About Hero Section -->
+<section class="about-hero py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <h1 class="display-5 fw-bold mb-4">About Me</h1>
+                    <p class="lead mb-4">
+                        I'm a passionate full-stack developer with over 5 years of experience creating 
+                        innovative web applications that solve real-world problems.
+                    </p>
+                    <p class="mb-4">
+                        My journey in software development began with a curiosity about how things work. 
+                        This curiosity has driven me to continuously learn new technologies and improve 
+                        my craft. I specialize in building scalable web applications using modern 
+                        frameworks and best practices.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>5+ years of professional development experience</span>
+                        </div>
+                        <div class="highlight-item mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Full-stack expertise in multiple technologies</span>
+                        </div>
+                        <div class="highlight-item mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Strong focus on user experience and performance</span>
+                        </div>
+                        <div class="highlight-item mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Agile development and team collaboration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-image text-center">
+                    <img src="https://pixabay.com/get/gb58188f26590d7f9fc52633f9d02985e52d82358e527497fabbe31c667edbeeb8b15724d36f9a2188aa6031b68843e7657b7f01cdcb0cf7cfb2401d36d6818b2_1280.jpg" 
+                         alt="Developer workspace" 
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills & Experience Section -->
+<section class="skills-experience py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-5">
+                <h2 class="fw-bold mb-4">Technical Skills</h2>
+                
+                <!-- Frontend Skills -->
+                <div class="skill-category mb-4">
+                    <h5 class="fw-semibold mb-3">
+                        <i class="fas fa-paint-brush text-primary me-2"></i>Frontend Development
+                    </h5>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>JavaScript / TypeScript</span>
+                            <span class="text-primary">Expert</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>React / Vue.js</span>
+                            <span class="text-primary">Advanced</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>HTML5 / CSS3 / SASS</span>
+                            <span class="text-primary">Expert</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Skills -->
+                <div class="skill-category mb-4">
+                    <h5 class="fw-semibold mb-3">
+                        <i class="fas fa-server text-warning me-2"></i>Backend Development
+                    </h5>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Python / Flask / Django</span>
+                            <span class="text-warning">Expert</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Node.js / Express</span>
+                            <span class="text-warning">Advanced</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>RESTful APIs / GraphQL</span>
+                            <span class="text-warning">Advanced</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database & Tools -->
+                <div class="skill-category mb-4">
+                    <h5 class="fw-semibold mb-3">
+                        <i class="fas fa-tools text-info me-2"></i>Database & Tools
+                    </h5>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>PostgreSQL / MySQL</span>
+                            <span class="text-info">Advanced</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>MongoDB / Redis</span>
+                            <span class="text-info">Intermediate</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Docker / Kubernetes</span>
+                            <span class="text-info">Intermediate</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4">Experience</h2>
+                
+                <!-- Experience Timeline -->
+                <div class="experience-timeline">
+                    <div class="timeline-item mb-4">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h5 class="fw-semibold">Senior Full-Stack Developer</h5>
+                            <p class="text-primary mb-2">Tech Innovations Inc. | 2022 - Present</p>
+                            <ul class="text-muted small">
+                                <li>Lead development of scalable web applications using Flask and React</li>
+                                <li>Mentor junior developers and conduct code reviews</li>
+                                <li>Implement CI/CD pipelines and improve development workflows</li>
+                                <li>Collaborate with cross-functional teams to deliver high-quality products</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-4">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h5 class="fw-semibold">Full-Stack Developer</h5>
+                            <p class="text-primary mb-2">Digital Solutions Ltd. | 2020 - 2022</p>
+                            <ul class="text-muted small">
+                                <li>Developed and maintained multiple client web applications</li>
+                                <li>Integrated third-party APIs and payment gateways</li>
+                                <li>Optimized application performance and database queries</li>
+                                <li>Participated in agile development process and sprint planning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-4">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h5 class="fw-semibold">Junior Web Developer</h5>
+                            <p class="text-primary mb-2">StartUp Hub | 2019 - 2020</p>
+                            <ul class="text-muted small">
+                                <li>Built responsive web interfaces using HTML, CSS, and JavaScript</li>
+                                <li>Assisted in backend development with Python and Flask</li>
+                                <li>Learned best practices for version control and code documentation</li>
+                                <li>Contributed to team projects and gained experience in web development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="education-section mt-5">
+                    <h3 class="fw-bold mb-3">Education</h3>
+                    <div class="education-item">
+                        <h5 class="fw-semibold">Bachelor of Science in Computer Science</h5>
+                        <p class="text-primary mb-2">University of Technology | 2015 - 2019</p>
+                        <p class="text-muted small">
+                            Focused on software engineering, algorithms, and data structures. 
+                            Graduated with honors and completed several team projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interests & Values Section -->
+<section class="interests-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="fw-bold mb-4">Beyond Code</h2>
+                <p class="lead text-muted mb-5">
+                    When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, 
+                    and staying updated with the latest industry trends.
+                </p>
+                
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="interest-card text-center p-4">
+                            <i class="fas fa-code-branch fa-3x text-primary mb-3"></i>
+                            <h5 class="fw-semibold">Open Source</h5>
+                            <p class="text-muted small">Contributing to the developer community</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="interest-card text-center p-4">
+                            <i class="fas fa-graduation-cap fa-3x text-warning mb-3"></i>
+                            <h5 class="fw-semibold">Learning</h5>
+                            <p class="text-muted small">Continuously improving and learning new skills</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="interest-card text-center p-4">
+                            <i class="fas fa-users fa-3x text-info mb-3"></i>
+                            <h5 class="fw-semibold">Mentoring</h5>
+                            <p class="text-muted small">Helping others grow in their development journey</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
