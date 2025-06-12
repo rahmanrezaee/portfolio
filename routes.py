@@ -6,68 +6,55 @@ import logging
 
 @app.route('/')
 def index():
-    """Homepage with hero section and featured projects"""
+    """Single page application with all sections"""
     featured_projects = Project.query.filter_by(featured=True).limit(3).all()
-    return render_template('index.html', featured_projects=featured_projects)
-
-@app.route('/about')
-def about():
-    """About page with skills and experience"""
-    return render_template('about.html')
-
-@app.route('/portfolio')
-def portfolio():
-    """Portfolio page with all projects"""
-    category = request.args.get('category', 'all')
-    
-    if category == 'all':
-        projects = Project.query.order_by(Project.created_at.desc()).all()
-    else:
-        projects = Project.query.filter_by(category=category).order_by(Project.created_at.desc()).all()
+    all_projects = Project.query.order_by(Project.created_at.desc()).all()
     
     # Get unique categories for filter buttons
     categories = db.session.query(Project.category).distinct().all()
     categories = [cat[0] for cat in categories]
     
-    return render_template('portfolio.html', projects=projects, categories=categories, current_category=category)
+    return render_template('single_page.html', 
+                         featured_projects=featured_projects,
+                         all_projects=all_projects, 
+                         categories=categories)
 
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route('/contact', methods=['POST'])
 def contact():
-    """Contact page with form"""
-    if request.method == 'POST':
-        name = request.form.get('name', '').strip()
-        email = request.form.get('email', '').strip()
-        subject = request.form.get('subject', '').strip()
-        message = request.form.get('message', '').strip()
+    """Handle contact form submission"""
+    name = request.form.get('name', '').strip()
+    email = request.form.get('email', '').strip()
+    subject = request.form.get('subject', '').strip()
+    message = request.form.get('message', '').strip()
+    
+    # Validation
+    if not all([name, email, subject, message]):
+        flash('All fields are required.', 'danger')
+        return redirect('/#contact')
+    
+    if '@' not in email or '.' not in email:
+        flash('Please enter a valid email address.', 'danger')
+        return redirect('/#contact')
+    
+    try:
+        # Save to database
+        contact_entry = Contact(
+            name=name,
+            email=email,
+            subject=subject,
+            message=message
+        )
+        db.session.add(contact_entry)
+        db.session.commit()
         
-        # Validation
-        if not all([name, email, subject, message]):
-            flash('All fields are required.', 'danger')
-            return render_template('contact.html')
-        
-        if '@' not in email or '.' not in email:
-            flash('Please enter a valid email address.', 'danger')
-            return render_template('contact.html')
-        
+        # Send email notification
         try:
-            # Save to database
-            contact_entry = Contact(
-                name=name,
-                email=email,
-                subject=subject,
-                message=message
+            msg = Message(
+                subject=f'Portfolio Contact: {subject}',
+                recipients=[app.config['MAIL_DEFAULT_SENDER']],
+                reply_to=email
             )
-            db.session.add(contact_entry)
-            db.session.commit()
-            
-            # Send email notification
-            try:
-                msg = Message(
-                    subject=f'Portfolio Contact: {subject}',
-                    recipients=[app.config['MAIL_DEFAULT_SENDER']],
-                    reply_to=email
-                )
-                msg.body = f"""
+            msg.body = f"""
 New contact form submission:
 
 Name: {name}
@@ -76,22 +63,21 @@ Subject: {subject}
 
 Message:
 {message}
-                """
-                mail.send(msg)
-                logging.info(f"Contact email sent successfully for {name}")
-            except Exception as e:
-                logging.error(f"Failed to send contact email: {str(e)}")
-                # Don't fail the form submission if email fails
-            
-            flash('Thank you for your message! I\'ll get back to you soon.', 'success')
-            return redirect(url_for('contact'))
-            
+            """
+            mail.send(msg)
+            logging.info(f"Contact email sent successfully for {name}")
         except Exception as e:
-            db.session.rollback()
-            logging.error(f"Database error in contact form: {str(e)}")
-            flash('There was an error sending your message. Please try again.', 'danger')
-    
-    return render_template('contact.html')
+            logging.error(f"Failed to send contact email: {str(e)}")
+            # Don't fail the form submission if email fails
+        
+        flash('Thank you for your message! I\'ll get back to you soon.', 'success')
+        return redirect('/#contact')
+        
+    except Exception as e:
+        db.session.rollback()
+        logging.error(f"Database error in contact form: {str(e)}")
+        flash('There was an error sending your message. Please try again.', 'danger')
+        return redirect('/#contact')
 
 @app.route('/resume')
 def resume():

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahman Rezaee - Mobile Engineer & Developer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Rahman Rezaee - Mobile Engineer and Developer with 5+ years experience in Flutter, Android, iOS development">
+    <meta name="keywords" content="mobile developer, flutter, android, ios, rahman rezaee, mobile engineer">
+    <meta name="author" content="Rahman Rezaee">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:title" content="Rahman Rezaee - Mobile Engineer & Developer">
+    <meta property="og:description" content="Mobile Engineer and Developer with 5+ years experience">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="fas fa-code me-2"></i>Rahman Rezaee
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('resume') }}" target="_blank">
+                            <i class="fas fa-download me-1"></i>Resume
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ 'danger' if category == 'error' else category }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-4">
+                            Hi, I'm <span class="text-primary">Rahman Rezaee</span>
+                        </h1>
+                        <p class="lead mb-4">
+                            Self-Started Mobile Engineer and Mobile Developer having 5+ years of experience in
+                            developing small-scale to middle and enterprise-scale projects.
+                        </p>
+                        <div class="hero-buttons mb-5">
+                            <a href="#portfolio" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-briefcase me-2"></i>View My Work
+                            </a>
+                            <a href="#contact" class="btn btn-outline-secondary btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Get In Touch
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h3 class="fw-bold text-primary mb-1">5+</h3>
+                                        <small class="text-muted">Years Experience</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h3 class="fw-bold text-primary mb-1">20+</h3>
+                                        <small class="text-muted">Projects Completed</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h3 class="fw-bold text-primary mb-1">15+</h3>
+                                        <small class="text-muted">Happy Clients</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image text-center">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face" 
+                             alt="Rahman Rezaee" 
+                             class="img-fluid rounded-circle shadow-lg"
+                             style="width: 400px; height: 400px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold mb-3">Technical Skills</h2>
+                    <p class="lead text-muted">Technologies I work with</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="skill-card text-center p-4 h-100">
+                        <i class="fab fa-android fa-3x text-success mb-3"></i>
+                        <h5 class="fw-semibold">Mobile Development</h5>
+                        <p class="text-muted small">Flutter, Android, iOS, Dart, Kotlin, Swift</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="skill-card text-center p-4 h-100">
+                        <i class="fab fa-js-square fa-3x text-warning mb-3"></i>
+                        <h5 class="fw-semibold">Frontend</h5>
+                        <p class="text-muted small">ReactJs, NextJs, Angular, Bootstrap, HTML, CSS</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="skill-card text-center p-4 h-100">
+                        <i class="fas fa-server fa-3x text-info mb-3"></i>
+                        <h5 class="fw-semibold">Backend & API</h5>
+                        <p class="text-muted small">Node.js, Firebase, Laravel, RESTful APIs</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="skill-card text-center p-4 h-100">
+                        <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-semibold">Tools & Others</h5>
+                        <p class="text-muted small">Git, WebRTC, Socket.io, Payment APIs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5 bg-dark">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold mb-3">About Me</h2>
+                    <p class="lead text-muted">My journey and experience</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <h3 class="fw-bold mb-4">Professional Background</h3>
+                    <p class="mb-4">
+                        I'm Rahman Rezaee, a self-started mobile engineer and mobile developer with 5+ years of experience 
+                        developing small-scale to middle and enterprise-scale projects.
+                    </p>
+                    <p class="mb-4">
+                        My journey in mobile development began with native Android development and evolved to include 
+                        Flutter, iOS, and full-stack web development. I have demonstrated ability to improve performance 
+                        by leveraging advanced and emerging technologies.
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>5+ years of mobile development experience</span>
+                        </div>
+                        <div class="highlight-item mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Expert in Flutter, Android, and iOS development</span>
+                        </div>
+                        <div class="highlight-item mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Published multiple apps on Google Play and App Store</span>
+                        </div>
+                        <div class="highlight-item mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Team leader with strong problem-solving skills</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h3 class="fw-bold mb-4">Work Experience</h3>
+                    
+                    <!-- Experience Timeline -->
+                    <div class="experience-timeline">
+                        <div class="timeline-item mb-4">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5 class="fw-semibold">Senior Mobile Developer</h5>
+                                <p class="text-primary mb-2">Webfume LLC | Nov 2020 – Feb 2023 | Remote</p>
+                                <ul class="text-muted small">
+                                    <li>Designed mobile applications using Flutter, Android (Java/Kotlin), and iOS (SwiftUI)</li>
+                                    <li>Built RESTful APIs using Node.js and Firebase</li>
+                                    <li>Implemented authentication with Firebase, Google, Facebook, Apple</li>
+                                    <li>Used WebRTC for live streaming and Socket.io for real-time chat</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item mb-4">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5 class="fw-semibold">Mobile Developer</h5>
+                                <p class="text-primary mb-2">Tutia Company | Oct 2018 – Nov 2020 | OnSite</p>
+                                <ul class="text-muted small">
+                                    <li>Developed mobile applications using Flutter and native Android</li>
+                                    <li>Integrated applications with Firebase and Laravel/WordPress APIs</li>
+                                    <li>Implemented state management with Provider, Bloc, MobX, and GetX</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item mb-4">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5 class="fw-semibold">Freelance Mobile Developer</h5>
+                                <p class="text-primary mb-2">Independent | Oct 2017 – Oct 2018 | Contract</p>
+                                <ul class="text-muted small">
+                                    <li>Built PHP accounting system using Laravel framework</li>
+                                    <li>Developed frontend using HTML, CSS, JavaScript, and jQuery</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold mb-3">My Portfolio</h2>
+                    <p class="lead text-muted">A showcase of my recent projects and technical expertise</p>
+                    
+                    <!-- Filter Buttons -->
+                    <div class="filter-buttons mb-5">
+                        <button class="btn btn-primary me-2 mb-2" data-filter="all">All Projects</button>
+                        {% for category in categories %}
+                        <button class="btn btn-outline-primary me-2 mb-2" data-filter="{{ category }}">{{ category.title() }}</button>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="row" id="projects-container">
+                {% for project in all_projects %}
+                <div class="col-lg-4 col-md-6 mb-5 project-item" data-category="{{ project.category }}">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="{{ project.image_url }}" alt="{{ project.title }}" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h5 class="fw-bold text-white mb-2">{{ project.title }}</h5>
+                                    <p class="text-white-50 small mb-3">{{ project.description[:80] }}...</p>
+                                    <div class="project-links">
+                                        {% if project.project_url != '#' %}
+                                        <a href="{{ project.project_url }}" class="btn btn-primary btn-sm me-2" target="_blank">
+                                            <i class="fas fa-external-link-alt me-1"></i>Live Demo
+                                        </a>
+                                        {% endif %}
+                                        {% if project.github_url != '#' %}
+                                        <a href="{{ project.github_url }}" class="btn btn-outline-light btn-sm" target="_blank">
+                                            <i class="fab fa-github me-1"></i>Code
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge bg-primary">{{ project.category.title() }}</span>
+                                {% if project.featured %}
+                                <span class="badge bg-warning">
+                                    <i class="fas fa-star me-1"></i>Featured
+                                </span>
+                                {% endif %}
+                            </div>
+                            <h5 class="fw-semibold mb-2">{{ project.title }}</h5>
+                            <p class="text-muted mb-3">{{ project.description }}</p>
+                            
+                            {% if project.technologies %}
+                            <div class="project-tech mb-3">
+                                <h6 class="fw-semibold small text-muted mb-2">Technologies Used:</h6>
+                                <div class="tech-tags">
+                                    {% for tech in project.technologies.split(', ') %}
+                                    <span class="badge bg-secondary me-1 mb-1">{{ tech.strip() }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5 bg-dark">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold mb-3">Get In Touch</h2>
+                    <p class="lead text-muted">Let's discuss your project and how I can help bring your ideas to life</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-lg-8 mb-5">
+                    <div class="contact-form-wrapper">
+                        <h3 class="fw-bold mb-4">Send Me a Message</h3>
+                        
+                        <form action="{{ url_for('contact') }}" method="POST" class="contact-form" novalidate>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Your Name *</label>
+                                    <input type="text" class="form-control form-control-lg" id="name" name="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control form-control-lg" id="email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <input type="text" class="form-control form-control-lg" id="subject" name="subject" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" name="message" rows="6" required
+                                          placeholder="Tell me about your project, timeline, and any specific requirements..."></textarea>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <h3 class="fw-bold mb-4">Contact Information</h3>
+                        
+                        <div class="contact-item mb-4">
+                            <div class="d-flex align-items-start">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-envelope fa-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-semibold mb-1">Email</h5>
+                                    <p class="text-muted mb-0">rahmanrezaie60@gmail.com</p>
+                                    <small class="text-muted">I'll respond within 24 hours</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item mb-4">
+                            <div class="d-flex align-items-start">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-phone fa-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-semibold mb-1">Phone & WhatsApp</h5>
+                                    <p class="text-muted mb-0">+93 (0) 785185336</p>
+                                    <small class="text-muted">Available for WhatsApp messages</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item mb-4">
+                            <div class="d-flex align-items-start">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-map-marker-alt fa-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-semibold mb-1">Location</h5>
+                                    <p class="text-muted mb-0">Afghanistan</p>
+                                    <small class="text-muted">Open to remote work worldwide</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="social-links mt-5">
+                            <h4 class="fw-bold mb-3">Connect With Me</h4>
+                            <div class="d-flex flex-wrap gap-3">
+                                <a href="https://linkedin.com/in/RahmanRezaee" class="social-link" target="_blank">
+                                    <i class="fab fa-linkedin fa-2x"></i>
+                                    <span class="ms-2">LinkedIn</span>
+                                </a>
+                                <a href="https://github.com/rahmanrezaee" class="social-link" target="_blank">
+                                    <i class="fab fa-github fa-2x"></i>
+                                    <span class="ms-2">GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-code me-2"></i>Rahman Rezaee
+                    </h5>
+                    <p class="text-muted">Mobile Engineer and Developer creating innovative mobile applications.</p>
+                </div>
+                <div class="col-md-6">
+                    <h6 class="fw-semibold mb-3">Connect With Me</h6>
+                    <div class="social-links">
+                        <a href="https://github.com/rahmanrezaee" class="text-decoration-none me-3" target="_blank">
+                            <i class="fab fa-github fa-lg"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/RahmanRezaee" class="text-decoration-none me-3" target="_blank">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                        </a>
+                        <a href="mailto:rahmanrezaie60@gmail.com" class="text-decoration-none">
+                            <i class="fas fa-envelope fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2024 Rahman Rezaee. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small class="text-muted">Built with Flask & Bootstrap</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/single_page.js') }}"></script>
+</body>
+</html>
