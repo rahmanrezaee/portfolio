@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeContactForm();
     initializeSmoothScrolling();
     initializeSkillAnimations();
+    initializeThemeToggle();
+    initializeTypewriter();
 });
 
 // Navigation functionality with smooth scrolling
@@ -16,20 +18,23 @@ function initializeNavigation() {
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
     
     // Navbar scroll effect
-    window.addEventListener('scroll', function() {
+    const applyNavbarState = () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
         if (scrollTop > 100) {
-            navbar.style.backgroundColor = 'rgba(var(--bs-dark-rgb), 0.98)';
-            navbar.style.backdropFilter = 'blur(15px)';
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.backgroundColor = 'rgba(var(--bs-dark-rgb), 0.95)';
-            navbar.style.backdropFilter = 'blur(10px)';
+            navbar.classList.remove('scrolled');
         }
-        
+    };
+
+    window.addEventListener('scroll', function() {
+        applyNavbarState();
         // Update active nav link based on scroll position
         updateActiveNavLink();
     });
+
+    // Set initial navbar state on load
+    applyNavbarState();
     
     // Mobile menu close on link click
     const navbarCollapse = document.querySelector('.navbar-collapse');
@@ -113,7 +118,7 @@ function initializeScrollAnimations() {
     }, observerOptions);
     
     // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.skill-card, .project-card, .timeline-item, .contact-item, .stat-item');
+    const animatedElements = document.querySelectorAll('.skill-card, .project-card, .project-card-new, .timeline-item, .contact-item, .stat-item');
     animatedElements.forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
@@ -280,6 +285,71 @@ function initializeSkillAnimations() {
     skillCategories.forEach(category => {
         observer.observe(category);
     });
+}
+
+// Theme toggle with persistence
+function initializeThemeToggle() {
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme) {
+        root.setAttribute('data-bs-theme', savedTheme);
+        updateThemeToggleIcon(toggle, savedTheme);
+    }
+
+    toggle?.addEventListener('click', () => {
+        const current = root.getAttribute('data-bs-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-bs-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeToggleIcon(toggle, next);
+    });
+}
+
+function updateThemeToggleIcon(button, theme) {
+    if (!button) return;
+    button.innerHTML = theme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+}
+
+// Simple typewriter for subtitle
+function initializeTypewriter() {
+    const el = document.querySelector('.typewriter');
+    if (!el) return;
+
+    const texts = [
+        'Mobile Engineer',
+        'Flutter | Android | iOS',
+        'Building delightful apps'
+    ];
+
+    let idx = 0;
+    let char = 0;
+    let deleting = false;
+
+    function tick() {
+        const current = texts[idx];
+        if (deleting) {
+            el.textContent = current.substring(0, char - 1);
+            char--;
+        } else {
+            el.textContent = current.substring(0, char + 1);
+            char++;
+        }
+
+        let speed = deleting ? 60 : 120;
+        if (!deleting && char === current.length) {
+            speed = 1200;
+            deleting = true;
+        } else if (deleting && char === 0) {
+            deleting = false;
+            idx = (idx + 1) % texts.length;
+            speed = 400;
+        }
+        setTimeout(tick, speed);
+    }
+
+    tick();
 }
 
 // Error handling for images

@@ -23,9 +23,23 @@ html {
 /* Navigation */
 .navbar {
     backdrop-filter: blur(10px);
-    background-color: rgba(var(--bs-dark-rgb), 0.95) !important;
+    background-color: rgba(var(--bs-dark-rgb), 0.75) !important;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
+}
+
+.navbar.scrolled {
+    background-color: rgba(var(--bs-dark-rgb), 0.98) !important;
+    backdrop-filter: blur(14px);
+}
+
+.theme-toggle {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar-brand {
@@ -54,10 +68,20 @@ html {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.05) 0%, rgba(var(--bs-secondary-rgb), 0.05) 100%);
+    background: radial-gradient(1200px 500px at 10% 10%, rgba(var(--bs-primary-rgb), 0.15), transparent 60%),
+                radial-gradient(1000px 400px at 90% 20%, rgba(var(--bs-info-rgb), 0.12), transparent 60%),
+                linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.05) 0%, rgba(var(--bs-secondary-rgb), 0.05) 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
+}
+
+.glass-card {
+    background: rgba(var(--bs-body-color-rgb, 255,255,255), 0.02);
+    border: 1px solid rgba(var(--bs-light-rgb), 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    padding: 1.25rem 1.5rem;
 }
 
 .hero-content h1 {
